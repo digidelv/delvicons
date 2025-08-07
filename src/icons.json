@@ -1,0 +1,59 @@
+{
+  "categories": {
+    "arrows": {
+      "name": "Arrows",
+      "description": "Directional arrows and navigation icons"
+    },
+    "feedback": {
+      "name": "Feedback",
+      "description": "Loading states, notifications, and user feedback"
+    },
+    "emotions": {
+      "name": "Emotions",
+      "description": "Hearts, likes, reactions, and emotional expressions"
+    }
+  },
+  "icons": {
+    "arrow-right": {
+      "name": "Arrow Right",
+      "category": "arrows",
+      "tags": ["arrow", "right", "next", "forward", "navigation"],
+      "type": "static",
+      "variants": {
+        "outline": "arrow-right.svg"
+      }
+    },
+    "loading-spinner": {
+      "name": "Loading Spinner",
+      "category": "feedback",
+      "tags": ["loading", "spinner", "progress", "wait", "animated"],
+      "type": "animated",
+      "variants": {
+        "animated": "loading-spinner.svg"
+      },
+      "animations": {
+        "default": {
+          "duration": "2s",
+          "timing": "linear",
+          "iteration": "infinite"
+        }
+      }
+    },
+    "heart-beat": {
+      "name": "Heart Beat",
+      "category": "emotions",
+      "tags": ["heart", "like", "love", "favorite", "animated", "pulse"],
+      "type": "animated",
+      "variants": {
+        "animated": "heart-beat.svg"
+      },
+      "animations": {
+        "default": {
+          "duration": "2s",
+          "timing": "ease-in-out",
+          "iteration": "infinite"
+        }
+      }
+    }
+  }
+}

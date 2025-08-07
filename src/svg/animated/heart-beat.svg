@@ -1,0 +1,15 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20.84 4.61A5.5 5.5 0 0 0 16.5 2.5C14.76 2.5 13.25 3.42 12 4.84C10.75 3.42 9.24 2.5 7.5 2.5A5.5 5.5 0 0 0 3.16 4.61A5.65 5.65 0 0 0 2 8.5C2 12.28 12 21.5 12 21.5S22 12.28 22 8.5C22 6.81 21.36 5.27 20.84 4.61Z" 
+        fill="currentColor">
+    <animateTransform 
+      attributeName="transform" 
+      type="scale" 
+      values="1;1.2;1;1;1" 
+      dur="2s" 
+      repeatCount="indefinite"
+      calcMode="spline"
+      keySplines="0.25 0.1 0.25 1;0.25 0.1 0.25 1;0.25 0.1 0.25 1;0.25 0.1 0.25 1"
+      keyTimes="0;0.3;0.6;0.8;1"
+      transformOrigin="12 12"/>
+  </path>
+</svg>
