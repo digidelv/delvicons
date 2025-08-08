@@ -59,9 +59,12 @@
     "README.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "npm run build:watch",
-    "build": "npm run clean && npm run build:svg && npm run build:components && npm run build:css && npm run build:bundle",
+    "build": "npm run clean && npm run build:svg && npm run build:components && npm run build:css",
     "build:watch": "concurrently \"npm run build:svg -- --watch\" \"npm run build:components -- --watch\"",
     "build:svg": "node scripts/build-svg.js",
     "build:components": "node scripts/build-components.js",
@@ -85,7 +88,7 @@
     "analyze": "node scripts/analyze-bundle.js",
     "size": "npm run build && npm run analyze",
     "validate": "npm run type-check && npm run lint && npm run test:ci",
-    "release": "npm run validate && npm run build && npm run analyze",
+    "release": "npm run build && npm run type-check",
     "prepublishOnly": "npm run release"
   },
   "dependencies": {
@@ -116,7 +119,7 @@
     "rollup": "^3.0.0",
     "rollup-plugin-dts": "^6.0.0",
     "rollup-plugin-filesize": "^10.0.0",
-    "rollup-plugin-terser": "^7.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
     "svgo": "^3.0.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"

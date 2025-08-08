@@ -7,48 +7,14 @@ export * from './types';
 import iconsData from './icons.json' assert { type: 'json' };
 export const { icons, categories } = iconsData;
 
-// Universal icon loader function
-export async function loadIcon(name: string, framework?: 'react' | 'vue' | 'angular' | 'vanilla') {
-  const detectedFramework = framework || await detectFramework();
-  
-  switch (detectedFramework) {
-    case 'react':
-      return import('./react').then(m => m[toPascalCase(name)]);
-    case 'vue':
-      return import('./vue').then(m => m[toPascalCase(name)]);
-    case 'angular':
-      return import('./angular').then(m => m[toPascalCase(name) + 'Component']);
-    case 'vanilla':
-    default:
-      return import('./vanilla').then(m => m['create' + toPascalCase(name)]);
-  }
-}
-
-// Framework detection utility
-async function detectFramework(): Promise<'react' | 'vue' | 'angular' | 'vanilla'> {
+// Framework detection utility (simplified for main entry)
+export function detectFramework(): 'react' | 'vue' | 'angular' | 'vanilla' {
   if (typeof window !== 'undefined') {
     // Browser environment
-    if (window.React || window.__REACT_DEVTOOLS_GLOBAL_HOOK__) return 'react';
-    if (window.Vue) return 'vue';
-    if (window.ng) return 'angular';
-  }
-  
-  if (typeof process !== 'undefined' && process.versions?.node) {
-    // Node.js environment - check for framework packages
-    try {
-      await import('react');
-      return 'react';
-    } catch {}
-    
-    try {
-      await import('vue');
-      return 'vue';
-    } catch {}
-    
-    try {
-      await import('@angular/core');
-      return 'angular';
-    } catch {}
+    const win = window as any;
+    if (win.React || win.__REACT_DEVTOOLS_GLOBAL_HOOK__) return 'react';
+    if (win.Vue) return 'vue';
+    if (win.ng) return 'angular';
   }
   
   return 'vanilla';
